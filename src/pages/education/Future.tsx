@@ -1,0 +1,70 @@
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+
+const Future = () => {
+  const navigate = useNavigate();
+
+  return (
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden text-gray-100">
+      {/* 🔮 Fond futuriste */}
+      <div
+        className="absolute inset-0 bg-cover bg-center brightness-75"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1920&q=80')",
+        }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-violet-900/70 via-purple-900/60 to-black/90 backdrop-blur-sm" />
+
+      {/* 💫 Halo violet */}
+      <motion.div
+        className="absolute w-[700px] h-[700px] bg-violet-500/30 rounded-full blur-3xl top-1/4 left-1/4 animate-pulse"
+      />
+
+      {/* 🌟 Contenu */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.2 }}
+        className="relative z-10 text-center max-w-4xl px-6 py-20"
+      >
+        <h1 className="text-6xl font-extrabold text-violet-300 mb-6 drop-shadow-[0_0_20px_rgba(167,139,250,0.6)]">
+          🔮 Aetheris Future
+        </h1>
+
+        <p className="text-lg md:text-xl text-gray-200 leading-relaxed mb-8">
+          Le **système d’orientation IA** d’Aetheris analyse les talents, passions et aptitudes pour guider chaque élève vers sa voie idéale.
+        </p>
+
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          className="bg-white/10 backdrop-blur-md border border-violet-300/30 rounded-2xl p-6 shadow-xl text-left max-w-2xl mx-auto"
+        >
+          <h3 className="text-2xl font-semibold text-violet-300 mb-3">
+            🌠 Capacités prédictives
+          </h3>
+          <ul className="list-disc list-inside text-gray-200 space-y-2">
+            <li>Analyse psychométrique assistée par IA</li>
+            <li>Cartographie des compétences et talents naturels</li>
+            <li>Suggestion de carrières et formations adaptées</li>
+            <li>Projection de trajectoires à 10 ans</li>
+          </ul>
+        </motion.div>
+
+        <p className="mt-10 italic text-violet-200 text-sm">
+          “L’avenir n’est pas deviné, il est compris.” 🌌
+        </p>
+
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          onClick={() => navigate("/education")}
+          className="mt-10 px-8 py-3 bg-violet-600 hover:bg-violet-500 text-white rounded-full shadow-lg border border-violet-300/40 transition"
+        >
+          ⬅️ Retour à l'Éducation
+        </motion.button>
+      </motion.div>
+    </div>
+  );
+};
+
+export default Future;

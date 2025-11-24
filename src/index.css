@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 🌌 ──────────────────────────────────────────────
+   AETHERIS IA SANTÉ — Thème global Tailwind
+   ────────────────────────────────────────────── */
+
+/* Corps de page : fond médical et texte clair */
+body {
+  @apply bg-secondary text-primary font-sans antialiased transition-colors duration-300 ease-in-out;
+}
+
+/* 🌈 Apparence de la sélection de texte */
+::selection {
+  @apply bg-primary text-secondary;
+}
+
+/* 🩺 Style général des titres */
+h1, h2, h3, h4, h5 {
+  @apply font-title text-primary tracking-wide;
+}
+
+/* 🧠 Liens interactifs */
+a {
+  @apply text-primary hover:text-cyan-400 transition-colors duration-200 ease-in-out;
+}
+
+/* 🪄 Boutons universels */
+button {
+  @apply bg-primary text-secondary font-medium px-4 py-2 rounded-lg hover:bg-cyan-400 hover:text-secondary transition duration-200;
+}
+
+/* 🩸 Scrollbar médical stylisé */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00FFFF, #4B0082);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #5BFFFF, #6A0DAD);
+}
+
+/* 💫 Animation d’apparition globale */
+.fade-in {
+  animation: fade-in 1s ease-in forwards;
+}
+
+/* 💡 Animation d’impulsion lumineuse (halo cyan) */
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* 🩺 Cartes de tableau de bord Aetheris */
+.card {
+  @apply bg-aetheris-dark rounded-2xl shadow-lg p-6 transition-transform duration-300 hover:scale-105 hover:shadow-cyan-500/50;
+}
+
+/* 🧬 Champs de formulaire uniformes */
+input, select, textarea {
+  @apply bg-secondary border border-primary/40 text-primary rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-primary/70 transition-all duration-200;
+}
+
+/* 🪶 Pied de page sobre */
+footer {
+  @apply text-center text-gray-400 text-sm py-6;
+}
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+.animate-pulse-slow {
+  animation: pulse-slow 6s infinite ease-in-out;
+}
