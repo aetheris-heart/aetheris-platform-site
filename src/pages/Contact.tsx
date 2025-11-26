@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Mail, Phone, MapPin, Send, ArrowLeft } from "lucide-react";
-import { useNavigate } from "react-router-dom"; // ✅ Import ajouté
+import { useNavigate } from "react-router-dom";
 
 const Contact = () => {
-  const navigate = useNavigate(); // ✅ Pour redirection
+  const navigate = useNavigate();
   const [form, setForm] = useState({ nom: "", email: "", message: "" });
   const [sent, setSent] = useState(false);
 
@@ -21,15 +21,12 @@ const Contact = () => {
 
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-teal-50 via-white to-emerald-100 flex flex-col items-center justify-center overflow-hidden p-10">
-      {/* 🌿 Halo lumineux de fond */}
-      <motion.div
-        className="absolute w-[700px] h-[700px] bg-emerald-300/30 rounded-full blur-3xl top-20 left-10 animate-pulse"
-      />
-      <motion.div
-        className="absolute w-[500px] h-[500px] bg-teal-400/30 rounded-full blur-3xl bottom-0 right-0 animate-pulse"
-      />
 
-      {/* 💬 Titre */}
+      {/* Halo lumineux */}
+      <motion.div className="absolute w-[700px] h-[700px] bg-emerald-300/30 rounded-full blur-3xl top-20 left-10 animate-pulse" />
+      <motion.div className="absolute w-[500px] h-[500px] bg-teal-400/30 rounded-full blur-3xl bottom-0 right-0 animate-pulse" />
+
+      {/* Titre */}
       <motion.h1
         initial={{ opacity: 0, y: -40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -39,7 +36,7 @@ const Contact = () => {
         Entrer en contact
       </motion.h1>
 
-      {/* 🌍 Description */}
+      {/* Description */}
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -51,7 +48,7 @@ const Contact = () => {
         Ensemble, façonnons un futur durable et intelligent.
       </motion.p>
 
-      {/* 📩 Zone de contact */}
+      {/* Formulaire */}
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -126,11 +123,12 @@ const Contact = () => {
       >
         <div>
           <Mail className="w-8 h-8 text-emerald-600 mx-auto mb-2" />
-          <p>contact@aetheris.health</p>
+          <p>info@aetheris-platform.com</p>
+          <p>team@aetheris-platform.com</p>
         </div>
         <div>
           <Phone className="w-8 h-8 text-emerald-600 mx-auto mb-2" />
-          <p>+32 460 00 00 00</p>
+          <p>+32 455 18 75 12</p>
         </div>
         <div>
           <MapPin className="w-8 h-8 text-emerald-600 mx-auto mb-2" />
@@ -138,7 +136,7 @@ const Contact = () => {
         </div>
       </motion.div>
 
-      {/* 🟢 Bouton Retour à l'accueil */}
+      {/* Bouton Retour */}
       <motion.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
