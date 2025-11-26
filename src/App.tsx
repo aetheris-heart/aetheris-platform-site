@@ -36,6 +36,9 @@ import Climat from "./pages/environnement/Climat";
 import Energie from "./pages/environnement/Energie";
 import AgroIA from "./pages/environnement/AgroIA";
 import Eau from "./pages/environnement/Eau";
+import Partnership from "./pages/Partnership";
+
+
 import { motion } from "framer-motion";
 // =============================================================
 // 🏠 PAGE D’ACCUEIL
@@ -260,26 +263,54 @@ const Home: React.FC<{ lang: "fr" | "en"; setLang: any }> = ({ lang, setLang }) 
 
 
       {/* 🤝 Contact */}
-      <section className="relative z-10 px-6 md:px-20 py-20 text-center bg-gradient-to-r from-cyan-100/70 to-indigo-100/70 backdrop-blur-xl mt-10 fade-in rounded-t-3xl shadow-inner">
-        <h2 className="text-3xl font-bold text-cyan-700 mb-4">{t.contact_title}</h2>
-        <p className="text-gray-700 mb-6">{t.contact_text}</p>
+<section className="relative z-10 px-6 md:px-20 py-20 text-center 
+bg-gradient-to-r from-cyan-100/70 to-indigo-100/70 backdrop-blur-xl 
+mt-10 fade-in rounded-t-3xl shadow-inner">
 
-        <Link
-          to="/contact"
-          className="inline-block px-8 py-3 bg-cyan-600 hover:bg-cyan-500 text-white rounded-full shadow-md transition"
-        >
-          ✉️ Écrivez-nous
-        </Link>
-      </section>
+  <h2 className="text-3xl font-bold text-cyan-700 mb-4">
+    {t.contact_title}
+  </h2>
 
-      {/* 🌠 Footer */}
-      <footer className="relative z-10 text-center py-10 border-t border-cyan-200 text-gray-600 text-sm bg-white/70">
-        <p className="italic mb-1">{t.footer_quote_fr}</p>
-        <p className="italic text-gray-500">{t.footer_quote_en}</p>
-        <p className="mt-3 text-xs text-gray-500">
-          © 2025 Aetheris Initiative. All rights reserved.
-        </p>
-      </footer>
+  <p className="text-gray-700 mb-8 max-w-2xl mx-auto leading-relaxed">
+    {t.contact_text}
+  </p>
+
+  {/* Boutons */}
+  <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+
+    {/* Bouton Contact */}
+    <Link
+      to="/contact"
+      className="inline-block px-10 py-3 bg-cyan-600 hover:bg-cyan-500 
+      text-white font-semibold rounded-full shadow-md transition 
+      hover:shadow-lg"
+    >
+      ✉️ Écrivez-nous
+    </Link>
+
+    {/* Bouton Partenariats */}
+    <Link
+      to="/partnership"
+      className="inline-block px-10 py-3 bg-indigo-600 hover:bg-indigo-500 
+      text-white font-semibold rounded-full shadow-md transition 
+      hover:shadow-lg"
+    >
+      🤝 Nos Partenariats
+    </Link>
+  </div>
+</section>
+
+{/* 🌠 Footer */}
+<footer className="relative z-10 text-center py-10 border-t border-cyan-200 
+text-gray-600 text-sm bg-white/70">
+  <p className="italic mb-1">{t.footer_quote_fr}</p>
+  <p className="italic text-gray-500">{t.footer_quote_en}</p>
+  <p className="mt-3 text-xs text-gray-500">
+    © 2025 Aetheris Initiative. All rights reserved.
+  </p>
+</footer>
+
+
     </div>
   );
 };
@@ -332,6 +363,7 @@ const App: React.FC = () => {
 <Route path="/environnement/energie" element={<Energie />} />
 <Route path="/environnement/agroia" element={<AgroIA />} />
 <Route path="/environnement/eau" element={<Eau />} />
+<Route path="/partnership" element={<Partnership />} />
 
     </Routes>
   );
